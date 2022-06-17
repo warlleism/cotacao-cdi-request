@@ -37,7 +37,7 @@ var ano = (today.getFullYear()).toString();
 const urlUSD = `https://www.okanebox.com.br/api/cambioptax/hist/USD/${ano}${mes}${diaAnterior}/${ano}${mes}${dia}/`
 const urlEUR = `https://www.okanebox.com.br/api/cambioptax/hist/EUR/${ano}${mes}${diaAnterior}/${ano}${mes}${dia}/`
 
-const requestPTAXUSD = async () => {
+const requestPTAXgitUSD = async () => {
     const dadosUsd = []
     const dadosEur = []
 
