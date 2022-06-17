@@ -105,25 +105,25 @@ const requestCDI = async () => {
         .then((dados) => {
             //Setando dados de 2021
 
-            camposTaxaJuros2021.jan = dados[415].valor
-            camposTaxaJuros2021.fev = dados[416].valor
-            camposTaxaJuros2021.mar = dados[417].valor
-            camposTaxaJuros2021.abr = dados[418].valor
-            camposTaxaJuros2021.maio = dados[419].valor
-            camposTaxaJuros2021.jun = dados[420].valor
-            camposTaxaJuros2021.jul = dados[432].valor
-            camposTaxaJuros2021.ago = dados[422].valor
-            camposTaxaJuros2021.set = dados[423].valor
-            camposTaxaJuros2021.out = dados[424].valor
-            camposTaxaJuros2021.nov = dados[425].valor
-            camposTaxaJuros2021.dez = dados[426].valor
+            camposTaxaJuros2021.jan = dados[415] == undefined ? " " : dados[415].valor
+            camposTaxaJuros2021.fev = dados[416] == undefined ? " " : dados[416].valor
+            camposTaxaJuros2021.mar = dados[417] == undefined ? " " : dados[417].valor
+            camposTaxaJuros2021.abr = dados[418] == undefined ? " " : dados[418].valor
+            camposTaxaJuros2021.maio = dados[419] == undefined ? " " : dados[419].valor
+            camposTaxaJuros2021.jun = dados[420] == undefined ? " " : dados[420].valor
+            camposTaxaJuros2021.jul = dados[432] == undefined ? " " : dados[421].valor
+            camposTaxaJuros2021.ago = dados[422] == undefined ? " " : dados[422].valor
+            camposTaxaJuros2021.set = dados[423] == undefined ? " " : dados[423].valor
+            camposTaxaJuros2021.out = dados[424] == undefined ? " " : dados[424].valor
+            camposTaxaJuros2021.nov = dados[425] == undefined ? " " : dados[425].valor
+            camposTaxaJuros2021.dez = dados[426] == undefined ? " " : dados[426].valor
 
-            camposTaxaJuros2022.jan = dados[427].valor
-            camposTaxaJuros2022.fev = dados[428].valor
-            camposTaxaJuros2022.mar = dados[429].valor
-            camposTaxaJuros2022.abr = dados[430].valor
-            camposTaxaJuros2022.maio = dados[431].valor
-            camposTaxaJuros2022.jun = dados[432].valor
+            camposTaxaJuros2022.jan = dados[427] == undefined ? " " : dados[427].valor
+            camposTaxaJuros2022.fev = dados[428] == undefined ? " " : dados[428].valor
+            camposTaxaJuros2022.mar = dados[429] == undefined ? " " : dados[429].valor
+            camposTaxaJuros2022.abr = dados[430] == undefined ? " " : dados[430].valor
+            camposTaxaJuros2022.maio = dados[431] == undefined ? " " : dados[431].valor
+            camposTaxaJuros2022.jun = dados[432] == undefined ? " " : dados[432].valor
             camposTaxaJuros2022.jul = dados[433] == undefined ? " " : dados[433].valor
             camposTaxaJuros2022.ago = dados[434] == undefined ? " " : dados[434].valor
             camposTaxaJuros2022.set = dados[435] == undefined ? " " : dados[435].valor
@@ -131,7 +131,6 @@ const requestCDI = async () => {
             camposTaxaJuros2022.nov = dados[437] == undefined ? " " : dados[437].valor
             camposTaxaJuros2022.dez = dados[438] == undefined ? " " : dados[438].valor
         })
-
 
     jan2021.innerHTML = camposTaxaJuros2021.jan
     fev2021.innerHTML = camposTaxaJuros2021.fev
@@ -158,12 +157,9 @@ const requestCDI = async () => {
     out2022.innerHTML = camposTaxaJuros2022.out
     nov2022.innerHTML = camposTaxaJuros2022.nov
     dez2022.innerHTML = camposTaxaJuros2022.dez
-
-
 }
 
 requestCDI()
-
 requestPTAXUSD()
 
 
