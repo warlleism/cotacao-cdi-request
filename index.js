@@ -29,7 +29,7 @@ const dez2022 = document.getElementById("dez2022")
 
 var today = new Date();
 var dia = (today.getDate()).toString();
-var diaAnterior = (today.getDate() - 2).toString();
+var diaAnterior = (today.getDate() - 2).toString();//O correto é -1
 var mes = (today.getMonth() + 1).toString();
 var ano = (today.getFullYear()).toString();
 
