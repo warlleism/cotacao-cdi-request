@@ -1,6 +1,7 @@
 const item = "";
 const ptax2021USD = document.getElementById('ptax2021USD')
 const ptax2021EUR = document.getElementById('ptax2021EUR')
+const ptax2021BRL = document.getElementById('ptax2021BRL')
 const jan2021 = document.getElementById('jan2021')
 const fev2021 = document.getElementById("fev2021")
 const mar2021 = document.getElementById("mar2021")
@@ -36,10 +37,12 @@ var ano = (today.getFullYear()).toString();
 //Requisição feita em dia de feriado, então os dados não foram disponibilizados pelo banco central, por isso o atraso de 2 dias para o dia anterior
 const urlUSD = `https://www.okanebox.com.br/api/cambioptax/hist/USD/${ano}${mes}${diaAnterior}/${ano}${mes}${dia}/`
 const urlEUR = `https://www.okanebox.com.br/api/cambioptax/hist/EUR/${ano}${mes}${diaAnterior}/${ano}${mes}${dia}/`
+const urlBRL = `https://www.okanebox.com.br/api/cambioptax/hist/EUR/${ano}${mes}${diaAnterior}/${ano}${mes}${dia}/`
 
-const requestPTAXgitUSD = async () => {
+const requestPTAXUSD = async () => {
     const dadosUsd = []
     const dadosEur = []
+    const dadosBrl = []
 
     await fetch(urlUSD)
         .then((res) => res.json())
@@ -52,6 +55,11 @@ const requestPTAXgitUSD = async () => {
         .then((dados) => dados.map(e => {
             dadosEur.push(e.COTACAO_COMPRA)
         }))
+    await fetch(urlBRL)
+        .then((res) => res.json())
+        .then((dados) => dados.map(e => {
+            dadosBrl.push(e.COTACAO_COMPRA)
+        }))
 
     if (dadosUsd.length == 0) {
         dadosUsd.push(" ")
@@ -59,9 +67,13 @@ const requestPTAXgitUSD = async () => {
     if (dadosEur.length == 0) {
         dadosEur.push(" ")
     }
+    if (dadosBrl.length == 0) {
+        dadosBrl.push(" ")
+    }
 
     ptax2021USD.innerHTML = dadosUsd[0]
     ptax2021EUR.innerHTML = dadosEur[0]
+    ptax2021BRL.innerHTML = dadosBrl[0]
 }
 
 
